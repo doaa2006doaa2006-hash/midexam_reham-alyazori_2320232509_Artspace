@@ -1,0 +1,126 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5EC"
+    android:layoutDirection="ltr"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/artworkCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 / 6"
+        android:textSize="16sp"
+        android:textColor="#231F1C"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/artworkFrame"
+        android:layout_width="280dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="18dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:padding="24dp"
+        app:layout_constraintTop_toBottomOf="@id/artworkCounter"
+        app:layout_constraintBottom_toTopOf="@id/artworkInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1">
+
+        <ImageView
+            android:id="@+id/artworkImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Artwork image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artwork1" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/artworkInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="24dp"
+        android:background="#FCEAE1"
+        android:orientation="vertical"
+        android:padding="14dp"
+        app:layout_constraintTop_toBottomOf="@id/artworkFrame"
+        app:layout_constraintBottom_toTopOf="@id/buttonRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/artworkTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deep Field Stellar Deaths"
+            android:textSize="24sp"
+            android:textColor="#333333" />
+
+        <TextView
+            android:id="@+id/artworkArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Smacs Carin (2021)"
+            android:textSize="14sp"
+            android:textColor="#333333" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/artworkInfo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/previousButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="Previous"
+            android:textAllCaps="false"
+            android:textColor="#A69B94"
+            android:backgroundTint="#E5DDD6"
+            android:enabled="false"
+            app:cornerRadius="24dp" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#914C1B"
+            android:enabled="true"
+            app:cornerRadius="24dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
